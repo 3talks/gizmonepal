@@ -14,7 +14,7 @@ import {
   categoriesQuery,
   inquiriesQuery,
   productsQuery,
-  type Product,
+
 } from "@/lib/catalog";
 
 export const Route = createFileRoute("/_authenticated/admin")({
