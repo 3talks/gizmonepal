@@ -15,26 +15,30 @@ import {
 } from "@/components/ui/select";
 import { brandsQuery, categoriesQuery, productsQuery } from "@/lib/catalog";
 
+type SortKey = "newest" | "price-asc" | "price-desc" | "name";
+
 type ProductSearch = {
-  category?: string;
-  brand?: string;
-  q?: string;
-  sort?: "newest" | "price-asc" | "price-desc" | "name";
+  category?: string | undefined;
+  brand?: string | undefined;
+  q?: string | undefined;
+  sort?: SortKey | undefined;
 };
 
+const SORTS: SortKey[] = ["newest", "price-asc", "price-desc", "name"];
+
 export const Route = createFileRoute("/products/")({
-  validateSearch: (search: Record<string, unknown>): ProductSearch => ({
-    category: typeof search.category === "string" ? search.category : undefined,
-    brand: typeof search.brand === "string" ? search.brand : undefined,
-    q: typeof search.q === "string" ? search.q : undefined,
-    sort:
-      search.sort === "price-asc" ||
-      search.sort === "price-desc" ||
-      search.sort === "name" ||
-      search.sort === "newest"
-        ? search.sort
-        : undefined,
-  }),
+  validateSearch: (search: Record<string, unknown>): ProductSearch => {
+    const str = (key: string) =>
+      typeof search[key] === "string" && search[key] ? (search[key] as string) : undefined;
+    const sort = search["sort"];
+    return {
+      category: str("category"),
+      brand: str("brand"),
+      q: str("q"),
+      sort: SORTS.includes(sort as SortKey) ? (sort as SortKey) : undefined,
+    };
+  },
+
   head: () => ({
     meta: [
       { title: "All Products — PulseGear Showroom Catalog" },
