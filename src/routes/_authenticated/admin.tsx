@@ -44,13 +44,17 @@ function AdminPage() {
   };
 
   const patch = useMutation({
-    mutationFn: async (input: { id: string; values: Partial<Product> }) => {
+    mutationFn: async (input: {
+      id: string;
+      values: { active?: boolean; featured?: boolean };
+    }) => {
       const { error } = await supabase
         .from("products")
         .update(input.values)
         .eq("id", input.id);
       if (error) throw error;
     },
+
     onSuccess: () => {
       invalidate();
       toast.success("Product updated");
