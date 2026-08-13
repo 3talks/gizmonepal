@@ -9,13 +9,13 @@ import { STORE, whatsappLink } from "@/lib/store";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact PulseGear — Visit or Message the Store" },
+      { title: "Contact Gizmo Nepal — Visit or Message the Store" },
       {
         name: "description",
         content:
-          "Store address, opening hours, phone, WhatsApp and an inquiry form to check product availability at PulseGear.",
+          "Store address, opening hours, phone, WhatsApp and an inquiry form to check product availability at Gizmo Nepal.",
       },
-      { property: "og:title", content: "Contact PulseGear" },
+      { property: "og:title", content: "Contact Gizmo Nepal" },
       {
         property: "og:description",
         content: "Call, WhatsApp or message us to check stock before you visit the showroom.",
