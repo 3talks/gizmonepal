@@ -9,16 +9,16 @@ import { brandsQuery, productsQuery } from "@/lib/catalog";
 export const Route = createFileRoute("/brands")({
   head: () => ({
     meta: [
-      { title: "Brands — PulseGear Authorised Range" },
+      { title: "Brands — Gizmo Nepal Authorised Range" },
       {
         name: "description",
         content:
-          "The gadget and accessory brands stocked at PulseGear, with the number of products available for each.",
+          "The gadget and accessory brands stocked at Gizmo Nepal, with the number of products available for each.",
       },
-      { property: "og:title", content: "Brands — PulseGear" },
+      { property: "og:title", content: "Brands — Gizmo Nepal" },
       {
         property: "og:description",
-        content: "See which accessory brands we carry in the PulseGear showroom.",
+        content: "See which accessory brands we carry in the Gizmo Nepal showroom.",
       },
     ],
   }),
