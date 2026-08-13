@@ -9,16 +9,16 @@ import { categoriesQuery, productsQuery } from "@/lib/catalog";
 export const Route = createFileRoute("/categories")({
   head: () => ({
     meta: [
-      { title: "Categories — PulseGear Accessory Range" },
+      { title: "Categories — Gizmo Nepal Accessory Range" },
       {
         name: "description",
         content:
-          "Explore PulseGear categories: chargers, power banks, cables, audio, action camera gear, bike mounts, storage and more.",
+          "Explore Gizmo Nepal categories: chargers, power banks, cables, audio, action camera gear, bike mounts, storage and more.",
       },
-      { property: "og:title", content: "Categories — PulseGear" },
+      { property: "og:title", content: "Categories — Gizmo Nepal" },
       {
         property: "og:description",
-        content: "Every accessory category stocked at the PulseGear showroom.",
+        content: "Every accessory category stocked at the Gizmo Nepal showroom.",
       },
     ],
   }),
