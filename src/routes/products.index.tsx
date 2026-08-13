@@ -41,16 +41,16 @@ export const Route = createFileRoute("/products/")({
 
   head: () => ({
     meta: [
-      { title: "All Products — PulseGear Showroom Catalog" },
+      { title: "All Products — Gizmo Nepal Showroom Catalog" },
       {
         name: "description",
         content:
-          "Search and filter every gadget and accessory stocked at PulseGear by category, brand and price.",
+          "Search and filter every gadget and accessory stocked at Gizmo Nepal by category, brand and price.",
       },
-      { property: "og:title", content: "All Products — PulseGear" },
+      { property: "og:title", content: "All Products — Gizmo Nepal" },
       {
         property: "og:description",
-        content: "Filter the full PulseGear in-store catalog by category, brand and price.",
+        content: "Filter the full Gizmo Nepal in-store catalog by category, brand and price.",
       },
     ],
   }),
