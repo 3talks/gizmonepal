@@ -9,13 +9,13 @@ import { STORE } from "@/lib/store";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About PulseGear — Our Accessory Showroom" },
+      { title: "About Gizmo Nepal — Our Accessory Showroom" },
       {
         name: "description",
         content:
-          "PulseGear is a physical gadget and accessory showroom. Learn how we pick stock, support warranties and help customers choose the right gear.",
+          "Gizmo Nepal is a physical gadget and accessory showroom. Learn how we pick stock, support warranties and help customers choose the right gear.",
       },
-      { property: "og:title", content: "About PulseGear" },
+      { property: "og:title", content: "About Gizmo Nepal" },
       {
         property: "og:description",
         content: "How our showroom works and why customers shop with us in person.",
