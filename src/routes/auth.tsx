@@ -10,15 +10,18 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 export const Route = createFileRoute("/auth")({
+  // Pure client-side auth form (no loader, no SEO value, noindex).
+  // SSR-ing it causes a hydration mismatch with the interactive form state.
+  ssr: false,
   head: () => ({
     meta: [
-      { title: "Staff Login — PulseGear" },
+      { title: "Staff Login — Gizmo Nepal" },
       {
         name: "description",
-        content: "Sign in to manage the PulseGear catalog, brands, categories and inquiries.",
+        content: "Sign in to manage the Gizmo Nepal catalog, brands, categories and inquiries.",
       },
-      { property: "og:title", content: "Staff Login — PulseGear" },
-      { property: "og:description", content: "Admin access to the PulseGear catalog." },
+      { property: "og:title", content: "Staff Login — Gizmo Nepal" },
+      { property: "og:description", content: "Admin access to the Gizmo Nepal catalog." },
       { name: "robots", content: "noindex" },
     ],
   }),
