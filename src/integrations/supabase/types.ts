@@ -14,200 +14,7 @@ export type Database = {
   }
   public: {
     Tables: {
-      brands: {
-        Row: {
-          created_at: string
-          id: string
-          logo_url: string | null
-          name: string
-          slug: string
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          logo_url?: string | null
-          name: string
-          slug: string
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          logo_url?: string | null
-          name?: string
-          slug?: string
-        }
-        Relationships: []
-      }
-      categories: {
-        Row: {
-          created_at: string
-          description: string | null
-          icon: string | null
-          id: string
-          name: string
-          slug: string
-        }
-        Insert: {
-          created_at?: string
-          description?: string | null
-          icon?: string | null
-          id?: string
-          name: string
-          slug: string
-        }
-        Update: {
-          created_at?: string
-          description?: string | null
-          icon?: string | null
-          id?: string
-          name?: string
-          slug?: string
-        }
-        Relationships: []
-      }
-      inquiries: {
-        Row: {
-          created_at: string
-          email: string | null
-          id: string
-          is_read: boolean
-          message: string
-          name: string
-          phone: string | null
-        }
-        Insert: {
-          created_at?: string
-          email?: string | null
-          id?: string
-          is_read?: boolean
-          message: string
-          name: string
-          phone?: string | null
-        }
-        Update: {
-          created_at?: string
-          email?: string | null
-          id?: string
-          is_read?: boolean
-          message?: string
-          name?: string
-          phone?: string | null
-        }
-        Relationships: []
-      }
-      product_images: {
-        Row: {
-          created_at: string
-          id: string
-          image_url: string
-          product_id: string
-          sort_order: number
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          image_url: string
-          product_id: string
-          sort_order?: number
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          image_url?: string
-          product_id?: string
-          sort_order?: number
-        }
-        Relationships: [
-          {
-            foreignKeyName: "product_images_product_id_fkey"
-            columns: ["product_id"]
-            isOneToOne: false
-            referencedRelation: "products"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      products: {
-        Row: {
-          active: boolean
-          brand_id: string | null
-          category_id: string | null
-          created_at: string
-          description: string | null
-          featured: boolean
-          id: string
-          name: string
-          price: number | null
-          short_description: string | null
-          slug: string
-          specifications: Json
-        }
-        Insert: {
-          active?: boolean
-          brand_id?: string | null
-          category_id?: string | null
-          created_at?: string
-          description?: string | null
-          featured?: boolean
-          id?: string
-          name: string
-          price?: number | null
-          short_description?: string | null
-          slug: string
-          specifications?: Json
-        }
-        Update: {
-          active?: boolean
-          brand_id?: string | null
-          category_id?: string | null
-          created_at?: string
-          description?: string | null
-          featured?: boolean
-          id?: string
-          name?: string
-          price?: number | null
-          short_description?: string | null
-          slug?: string
-          specifications?: Json
-        }
-        Relationships: [
-          {
-            foreignKeyName: "products_brand_id_fkey"
-            columns: ["brand_id"]
-            isOneToOne: false
-            referencedRelation: "brands"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "products_category_id_fkey"
-            columns: ["category_id"]
-            isOneToOne: false
-            referencedRelation: "categories"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      user_roles: {
-        Row: {
-          created_at: string
-          id: string
-          role: Database["public"]["Enums"]["app_role"]
-          user_id: string
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          role: Database["public"]["Enums"]["app_role"]
-          user_id: string
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          role?: Database["public"]["Enums"]["app_role"]
-          user_id?: string
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Views: {
       [_ in never]: never
@@ -216,7 +23,7 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      app_role: "admin" | "user"
+      [_ in never]: never
     }
     CompositeTypes: {
       [_ in never]: never
@@ -343,8 +150,6 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {
-      app_role: ["admin", "user"],
-    },
+    Enums: {},
   },
 } as const
